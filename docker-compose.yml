@@ -2,7 +2,7 @@ version: '3'
 
 services:
   rest:
-    image: honeyball/node_rest_server
+    image: <IMAGE NAME>
     ports:
       - 4001:4001
     networks: 
@@ -11,7 +11,7 @@ services:
       - neo4j_db
       - db_server
   db_server:
-    image: honeyball/node_db_server
+    image: <IMAGE NAME>
     ports:
       - 4000:4000
     networks: 
@@ -27,8 +27,8 @@ services:
     networks: 
       - db_network
     volumes:
-      - C:/Users/Farea/Desktop/Projekte/Docker/distributed_node/neo4j/data:/data
-      - C:/Users/Farea/Desktop/Projekte/Docker/distributed_node/neo4j/logs:/logs
+      - <ABSOLUTE/PATH/TO>/neo4j/data:/data
+      - <ABSOLUTE/PATH/TO>/neo4j/logs:/logs
     environment:
       - NEO4J_AUTH=neo4j/password
 
